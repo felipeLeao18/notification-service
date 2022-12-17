@@ -6,12 +6,14 @@ describe('Send Notification ', () => {
     const notificationsRepository = new InMemoryNotificationsRepository();
     const sendNotification = new SendNotification(notificationsRepository);
 
-    sendNotification.execute({
+    const { notification } = await sendNotification.execute({
       content: 'Notification content',
       category: 'social',
       recipientId: 'recipientId',
     });
     expect(sendNotification).toBeTruthy();
+
     expect(notificationsRepository.notifications.length).toBe(1);
+    expect(notification).toEqual(notificationsRepository.notifications[0]);
   });
 });
