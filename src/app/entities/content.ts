@@ -5,7 +5,7 @@ export class Content {
     const isContentValid = this.validateContent(content);
 
     if (!isContentValid) {
-      throw new Error('content validation error');
+      throw new Error("content validation error");
     }
     this.content = content;
   }

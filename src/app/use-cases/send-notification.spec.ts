@@ -1,15 +1,15 @@
-import { InMemoryNotificationsRepository } from '../repositories/in-memory-notification-repository';
-import { SendNotification } from './send-notification';
+import { InMemoryNotificationsRepository } from "@app/repositories/in-memory-notification-repository";
+import { SendNotification } from "./send-notification";
 
-describe('Send Notification ', () => {
-  it('should be able to send a notification', async () => {
+describe("Send Notification ", () => {
+  it("should be able to send a notification", async () => {
     const notificationsRepository = new InMemoryNotificationsRepository();
     const sendNotification = new SendNotification(notificationsRepository);
 
     const { notification } = await sendNotification.execute({
-      content: 'Notification content',
-      category: 'social',
-      recipientId: 'recipientId',
+      content: "Notification content",
+      category: "social",
+      recipientId: "recipientId",
     });
     expect(sendNotification).toBeTruthy();
 
