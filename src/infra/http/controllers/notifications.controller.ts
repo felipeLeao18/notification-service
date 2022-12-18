@@ -16,6 +16,6 @@ export class NotificationController {
       recipientId,
     });
 
-    return { notification: NotificationViewModel.toHTTP(notification)};
+    return { notification: NotificationViewModel.toHTTP(notification) };
   }
 }
