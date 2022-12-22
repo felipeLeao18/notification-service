@@ -5,7 +5,7 @@ import { GetRecipientNotifications } from './get-recipient-notifications';
 describe('Get recipient notifications', () => {
   it('should be able to get recipient notifications', async () => {
     const notificationsRepository = new InMemoryNotificationsRepository();
-    const countNotifications = new GetRecipientNotifications(
+    const getRecipientNotifications = new GetRecipientNotifications(
       notificationsRepository,
     );
 
@@ -19,7 +19,7 @@ describe('Get recipient notifications', () => {
       makeNotification({ recipientId: 'recipient-1' }),
     );
 
-    const { notifications } = await countNotifications.execute({
+    const { notifications } = await getRecipientNotifications.execute({
       recipientId: 'recipient-1',
     });
 
