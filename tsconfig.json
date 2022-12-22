@@ -24,7 +24,8 @@
       "@app/*": ["./src/app/*"],
       "@entities/*": ["./src/app/entities/*"],
       "@helpers/*": ["./src/helpers/*"],
-      "@infra/*": ["./src/infra/*"]
+      "@infra/*": ["./src/infra/*"],
+      "@factories/*": ["./src/factories/*"]
     }
   }
 }
